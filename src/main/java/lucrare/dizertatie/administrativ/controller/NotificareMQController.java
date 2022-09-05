@@ -1,8 +1,8 @@
-package lucrare.dizertatie.administrativ.notificare.controller;
+package lucrare.dizertatie.administrativ.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import lucrare.dizertatie.administrativ.notificare.Notificare;
-import lucrare.dizertatie.administrativ.notificare.service.NotificareService;
+import lucrare.dizertatie.administrativ.model.Notificare;
+import lucrare.dizertatie.administrativ.service.NotificareService;
 import lucrare.dizertatie.common.exception.MessagingException;
 import lucrare.dizertatie.common.exception.RepositoryException;
 import org.springframework.amqp.core.Message;

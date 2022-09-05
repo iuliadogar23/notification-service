@@ -12,6 +12,7 @@ spring:
         mongodb:
             database: administrativ
             uri: mongodb://127.0.0.1:27017/administrativ
+            version: 4.4.6
     main:
         allow-bean-definition-overriding: true
     rabbitmq:

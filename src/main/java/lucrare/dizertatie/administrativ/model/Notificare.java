@@ -1,4 +1,4 @@
-package lucrare.dizertatie.administrativ.notificare;
+package lucrare.dizertatie.administrativ.model;
 
 import lombok.Data;
 import org.bson.types.ObjectId;

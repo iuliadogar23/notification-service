@@ -14,6 +14,7 @@
 	<name>administrativ</name>
 	<description>Proiect administrativ - notificare si verificare token</description>
 	<properties>
+		<java.version>11</java.version>
 		<spring-cloud.version>2021.0.2</spring-cloud.version>
 	</properties>
 	<dependencies>
@@ -92,6 +93,14 @@
 				<version>3.0.0-M3</version>
 				<configuration>
 					<skipTests>true</skipTests>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>11</source>
+					<target>11</target>
 				</configuration>
 			</plugin>
 		</plugins>

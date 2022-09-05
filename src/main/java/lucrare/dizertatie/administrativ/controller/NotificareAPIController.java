@@ -1,7 +1,7 @@
-package lucrare.dizertatie.administrativ.notificare.controller;
+package lucrare.dizertatie.administrativ.controller;
 
-import lucrare.dizertatie.administrativ.notificare.Notificare;
-import lucrare.dizertatie.administrativ.notificare.service.NotificareService;
+import lucrare.dizertatie.administrativ.model.Notificare;
+import lucrare.dizertatie.administrativ.service.NotificareService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;

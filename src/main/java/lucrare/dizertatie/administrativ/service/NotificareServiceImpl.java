@@ -1,18 +1,13 @@
-package lucrare.dizertatie.administrativ.notificare.service;
+package lucrare.dizertatie.administrativ.service;
 
 import lombok.RequiredArgsConstructor;
-import lucrare.dizertatie.administrativ.notificare.Notificare;
-import lucrare.dizertatie.administrativ.notificare.service.repository.NotificareRepository;
+import lucrare.dizertatie.administrativ.model.Notificare;
+import lucrare.dizertatie.administrativ.repository.NotificareRepository;
 import lucrare.dizertatie.common.exception.RepositoryException;
 import org.springframework.stereotype.Service;
 
-import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
 import java.sql.Timestamp;
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -34,14 +29,22 @@ public class NotificareServiceImpl implements NotificareService {
     @Override
     public Notificare save(Notificare notificare)
     {
-        notificare.setDataOra(String.valueOf(new Timestamp(System.currentTimeMillis())));
 
-        try {
+        List<Notificare> notificareList = notificareRepository.findAllByMesaj(notificare.getMesaj());
+        if (notificareList.isEmpty())
             return notificareRepository.save(notificare);
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new RepositoryException();
+        Collections.reverse(notificareList);
+        if (System.currentTimeMillis()-Timestamp.valueOf(notificareList.get(0).getDataOra()).getTime()>2000){
+            notificare.setDataOra(String.valueOf(new Timestamp(System.currentTimeMillis())));
+
+            try {
+                return notificareRepository.save(notificare);
+            } catch (Exception e) {
+                e.printStackTrace();
+                throw new RepositoryException();
+            }
         }
+        return null;
     }
 //
 //    public void receiveEvents() throws URISyntaxException, IOException, InterruptedException {

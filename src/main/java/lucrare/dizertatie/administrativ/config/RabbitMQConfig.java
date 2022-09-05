@@ -1,6 +1,6 @@
 package lucrare.dizertatie.administrativ.config;
 
-import lucrare.dizertatie.administrativ.notificare.controller.NotificareMQController;
+import lucrare.dizertatie.administrativ.controller.NotificareMQController;
 import org.springframework.amqp.core.*;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;

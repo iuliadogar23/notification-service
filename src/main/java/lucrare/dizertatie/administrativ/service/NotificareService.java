@@ -1,9 +1,7 @@
-package lucrare.dizertatie.administrativ.notificare.service;
+package lucrare.dizertatie.administrativ.service;
 
-import lucrare.dizertatie.administrativ.notificare.Notificare;
+import lucrare.dizertatie.administrativ.model.Notificare;
 
-import java.io.IOException;
-import java.net.URISyntaxException;
 import java.util.List;
 
 public interface NotificareService {
