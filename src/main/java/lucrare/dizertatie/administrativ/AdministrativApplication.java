@@ -18,7 +18,7 @@ public class AdministrativApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(AdministrativApplication.class, args);
-		receiveEvents();
+//		receiveEvents();
 	}
 
 	private static void receiveEvents(){
